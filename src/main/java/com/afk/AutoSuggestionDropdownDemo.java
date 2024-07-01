@@ -1,10 +1,7 @@
 package com.afk;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
@@ -47,6 +44,11 @@ public class AutoSuggestionDropdownDemo {
 
             // Confirm the selection by pressing the Enter key
             from.sendKeys(Keys.ENTER);
+
+
+            JavascriptExecutor javascriptExecutor= (JavascriptExecutor)driver;
+            javascriptExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+
 
         } finally {
             // Wait for a few seconds before closing the browser
